@@ -1,5 +1,7 @@
 ## Getting Started
 
+with: i18n, bootstrap, 
+
 First, run the development server:
 
 ```bash
