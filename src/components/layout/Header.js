@@ -1,10 +1,31 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import {
   Navbar,
   Container,
   Offcanvas,
   Nav
 } from "react-bootstrap";
+
+const routerList = [
+  ['zh-TW', '中文'],
+  ['en', '英文']
+]
+
+function ChangeLangButton() {
+  const router = useRouter();
+  const { pathname, query } = router;
+
+  return (
+    <>
+      {routerList.map((item, index) => (
+        <Link key={index} locale={item[0]} href={{pathname, query}}>
+          {item[1]}
+        </Link>
+      ))}
+    </>
+  )
+}
 
 export default function Header() {
   return (
@@ -32,6 +53,7 @@ export default function Header() {
                 <Nav.Link as="span">page</Nav.Link>
               </Link>
             </Nav>
+            <ChangeLangButton/>
           </Offcanvas.Body>
         </Navbar.Offcanvas>
       </Container>
