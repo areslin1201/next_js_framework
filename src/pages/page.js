@@ -1,5 +1,7 @@
 export default function Page() {
   return (
-    <>page</>
+    <>
+      <div style={{height: "3000px"}}>page</div>
+    </>
   )
 }
